@@ -216,6 +216,17 @@ exports.handler = async (event) => {
         });
       });
 
+      // Additional POST request to Zapier
+ const zapierResponse = await fetch('https://hooks.zapier.com/hooks/catch/18365503/37hs1dq/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data)
+});
+
+if (!zapierResponse.ok) throw new Error('Failed to send data to Zapier');
+
       // Additional POST request to Zapier or handling other responses
       return {
         statusCode: 200,
