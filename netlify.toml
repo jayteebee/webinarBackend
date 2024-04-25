@@ -13,4 +13,4 @@ autoLaunch = true  # Automatically open the browser
 
 [functions]
   # Specify the directory where your Netlify functions are located
-  directory = "./functions"
+directory = "./netlify/functions"
