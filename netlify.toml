@@ -1,8 +1,16 @@
-[build]
-functions = "netlify/functions"
-publish = "build"
-command = "npm run build"
-
 [dev]
-command = "npm run start"
-publish = "."
+command = "node index.js"  
+port = 8888  # The port your Express server is listening on
+targetPort = 3000  # Same as port, for clarity
+autoLaunch = true  # Automatically open the browser
+
+
+
+[build]
+  # No build command needed if you only have serverless functions
+  command = ""
+  publish = ""
+
+[functions]
+  # Specify the directory where your Netlify functions are located
+  directory = "./functions"
