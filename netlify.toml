@@ -1,0 +1,8 @@
+[build]
+functions = "netlify/functions"
+publish = "build"
+command = "npm run build"
+
+[dev]
+command = "npm run start"
+publish = "."

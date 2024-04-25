@@ -1,0 +1,21 @@
+{
+  "name": "webinarbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+      "start": "netlify dev",
+      "build": "echo 'No build step'"
+  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.22.1"
+  }
+}
