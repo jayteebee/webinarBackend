@@ -133,7 +133,7 @@ const transporter = nodemailer.createTransport({
 // Netlify function handler
 exports.handler = async (event) => {
   const headers = {
-    'Access-Control-Allow-Origin': ['http://localhost:8888', "www.thermalvisionresearch.com"],
+    'Access-Control-Allow-Origin': ['http://localhost:8888', "https://www.thermalvisionresearch.com"],
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Content-Type': 'application/json'
