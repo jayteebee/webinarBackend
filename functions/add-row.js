@@ -133,7 +133,7 @@ const transporter = nodemailer.createTransport({
 // Netlify function handler
 exports.handler = async (event) => {
   const headers = {
-    'Access-Control-Allow-Origin': 'http://localhost:8888',
+    'Access-Control-Allow-Origin': ['http://localhost:8888', "www.thermalvisionresearch.com"],
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Content-Type': 'application/json'
@@ -157,7 +157,7 @@ exports.handler = async (event) => {
         name: 'Webinar Series'
       });
 
-      const startDate = new Date('2024-04-26T09:00:00Z');
+      const startDate = new Date('2024-04-27T10:00:00Z');
       const endDate = new Date(startDate.getTime() + 1800000); // 30 minutes later
 
       // Create event
@@ -165,7 +165,7 @@ exports.handler = async (event) => {
         start: startDate,
         end: endDate,
         summary: 'Webinar Registration',
-        description: 'Thank you for registering to our webinar series.',
+        description: "Thank you for registering to our webinar series. Here's the Teams Link: https://teams.live.com/meet/9490174204348?p=64hAidQNYoUe0FYd",
         organizer: {name: 'Jethro Block', email: 'jethro@thermalvisionresearch.co.uk'},
         attendees: [{
           email: email,
@@ -187,6 +187,17 @@ exports.handler = async (event) => {
         html: `
           <p>Hello ${firstName},</p>
           <p>Thank you for registering to our webinar series. Your calendar invitation should be with you shortly.</p>
+<p>          You're invited to join a Microsoft Teams meeting </p>
+<p>Join on your computer or mobile app </p>
+<table cellspacing="0" cellpadding="0"> <tr>
+<td align="center" width="200" height="40" bgcolor="#4CAF50" style="border-radius: 2px;" bgcolor="#000000">
+  <a href="https://teams.live.com/meet/9490174204348?p=64hAidQNYoUe0FYd" 
+    target="_blank" 
+    style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 2px; border: 1px solid #4CAF50; display: inline-block;">
+    Attend Meeting
+  </a>
+</td>
+</tr> </table>
           <p>Kind Regards,<br>Jethro Block<br>Business Development Manager<br>07948 725 229<br>www.thermalvisionecology.co.uk<br>2530 The Quadrant, Aztec West, Bristol BS32 4AQ</p>
           <img src="https://i.ibb.co/092hq5D/tvrLOGO.png" alt="tvrLOGO" border="0" height="70px">
         `,
