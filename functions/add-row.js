@@ -34,7 +34,7 @@ exports.handler = async (event) => {
     try {
       // Parse the request body
       const data = JSON.parse(event.body);
-      const { firstName, email, phoneNumber, submittedAt } = data;
+      const { firstName, email, submittedAt } = data;
 
       // Mail options for the user as a thank-you response
       const mailOptionsUser = {
@@ -45,7 +45,7 @@ exports.handler = async (event) => {
           <p>Hello ${firstName},</p>
           <p>Thank you for registering to our webinar series. Your calendar invitation should be with you shortly.</p>
           <p>Kind Regards,<br>Jethro Block<br>Business Development Manager<br>07948 725 229<br>www.thermalvisionecology.co.uk<br>2530 The Quadrant, Aztec West, Bristol BS32 4AQ</p>
-          <img src="https://i.ibb.co/84j63Ww/tvrLOGO.webp" alt="tvrLOGO" border="0" height="70px">
+          <img src="https://i.ibb.co/092hq5D/tvrLOGO.png" alt="tvrLOGO" border="0" height="70px">
         ` // Include your email signature as an image or HTML here
       };
 
