@@ -160,13 +160,13 @@ exports.handler = async (event) => {
       const startDate = new Date('2024-04-27T10:00:00Z');
       const endDate = new Date(startDate.getTime() + 1800000); // 30 minutes later
 
-      // Create event
+      // Create calendar event
       calendar.createEvent({
         start: startDate,
         end: endDate,
         summary: 'Webinar Registration',
         description: "Thank you for registering to our webinar series. Here's the Teams Link: https://teams.live.com/meet/9490174204348?p=64hAidQNYoUe0FYd",
-        organizer: {name: 'Jethro Block', email: 'jethro@thermalvisionresearch.co.uk'},
+        organizer: { name: 'Jethro Block', email: 'jethro@thermalvisionresearch.co.uk' },
         attendees: [{
           email: email,
           name: firstName,
@@ -180,6 +180,7 @@ exports.handler = async (event) => {
       const icsString = calendar.toString();
 
       // Mail options for the user as a thank-you response
+      // FIRST EMAIL TO GET SENT
       const mailOptionsUser = {
         from: process.env.EMAIL,
         to: email,
@@ -217,15 +218,15 @@ exports.handler = async (event) => {
       });
 
       // Additional POST request to Zapier
- const zapierResponse = await fetch('https://hooks.zapier.com/hooks/catch/18365503/37hs1dq/', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data)
-});
+      const zapierResponse = await fetch('https://hooks.zapier.com/hooks/catch/18365503/37hs1dq/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
 
-if (!zapierResponse.ok) throw new Error('Failed to send data to Zapier');
+      if (!zapierResponse.ok) throw new Error('Failed to send data to Zapier');
 
       // Additional POST request to Zapier or handling other responses
       return {
