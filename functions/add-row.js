@@ -1,14 +1,19 @@
+require('dotenv').config({ path: '.env' })
 const nodemailer = require('nodemailer');
-const { ICalCalendar } = require('ical-generator');
+
+const myEmail = process.env.EMAIL
+const myPassword = process.env.PASSWORD
+console.log(myEmail)
 
 // Configure nodemailer transport using environment variables
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
-    user: process.env.EMAIL || "jethro@thermalvisionresearch.co.uk",
-    pass: process.env.PASSWORD || "ThermalVR2k4",
+    user: process.env.EMAIL || "jethro@thermalvisionresearch.co.uk" ,
+    pass: process.env.PASSWORD || "ThermalVR2k4"
   },
 });
+
 
 // Netlify function handler
 exports.handler = async (event) => {
