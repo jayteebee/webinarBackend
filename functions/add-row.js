@@ -37,16 +37,17 @@ exports.handler = async (event) => {
       const mailOptionsUser = {
         from: process.env.EMAIL,
         to: email,
-        subject: 'Thank you for registering to our Webinar Series',
+        subject: 'Thank you for registering for our Thermal Vision Ecology Webinar!',
         html: `
           <p>Hello ${firstName},</p>
-          <p>Thank you for registering to the first webinar in our series, An Introduction to Thermal Imaging for R&D and Science, 29th May - 11am to 12pm. </p>
+          <p>Thank you for registering to the Thermal Vision Ecology webinar, 24th July - 11am to 12pm. </p>
           <p> Your calendar invitation should be with you shortly. If it hasn't arrived after a few minutes, please check your junk/spam folder.</p>
-          <img src="https://i.ibb.co/zVbV7PM/Webinar-Thank-You-Flyer-2.png" alt="Webinar-Thank-You-Flyer-2" border="0">
+          <img src="https://i.ibb.co/7Jp4kWm/Eco-Thank-You-Flyer-Bat.png" alt="Webinar-Thank-You-Flyer-2" border="0">
           <p>Kind Regards,<br>Jethro Block<br>Business Development Manager<br>07948 725 229<br>www.thermalvisionecology.co.uk<br>2530 The Quadrant, Aztec West, Bristol BS32 4AQ</p>
           <img src="https://i.ibb.co/092hq5D/tvrLOGO.png" alt="tvrLOGO" border="0" height="70px">
         `,
       };
+  
 
       // Send the email
       await new Promise((resolve, reject) => {
