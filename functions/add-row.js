@@ -37,14 +37,14 @@ exports.handler = async (event) => {
       const mailOptionsUser = {
         from: process.env.EMAIL,
         to: email,
-        subject: 'Thank you for registering for our Thermal Vision Ecology Webinar!',
+        subject: 'Thank you for registering for our Unlocking Precision: Using FLIR R&D Cameras for Advanced PCB Thermal Analysis!',
         html: `
           <p>Hello ${firstName},</p>
-          <p>Thank you for registering to the Thermal Vision Ecology webinar, 24th July - 11am to 12pm. </p>
+          <p>Thank you for registering to the Unlocking Precision: Using FLIR R&D Cameras for Advanced PCB Thermal Analysis webinar, 21st November - 11am to 12pm. </p>
           <p> Your calendar invitation should be with you shortly. If it hasn't arrived after a few minutes, please check your junk/spam folder.</p>
-          <img src="https://i.ibb.co/zXtQ8Rt/Eco-Thank-You-Flyer-Bat-1.png" alt="Webinar-Thank-You-Flyer-2" border="0">
-          <p>Kind Regards,<br>Jethro Block<br>Business Development Manager<br>07948 725 229<br>www.thermalvisionecology.co.uk<br>2530 The Quadrant, Aztec West, Bristol BS32 4AQ</p>
-          <img src="https://i.ibb.co/ZTFD580/TVElogo-copy.png" alt="tveLOGO" border="0" height="70px">
+          <img src="https://i.ibb.co/bbqHvvs/Webinar-Thank-You-Flyer-1.png" alt="Webinar-Thank-You-Flyer-1" border="0">
+          <p>Kind Regards,<br>Jethro Block<br>Business Development Manager<br>07948 725 229<br>www.thermalvisionresearch.co.uk<br>2530 The Quadrant, Aztec West, Bristol BS32 4AQ</p>
+          <img src="https://i.ibb.co/MZVdWzw/tvr-LOGO-1.png" alt="tvr-LOGO-1" border="0">
         `,
       };
 
